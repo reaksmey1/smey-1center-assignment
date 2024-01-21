@@ -10,6 +10,12 @@ paths:
       responses:
         '422':
           description: 'Invalid Input: Max number should be positive.'
+  "/api/prime_numbers/calculate?max_number=1000":
+    get:
+      summary: calculate prime number with max value equal 1000
+      responses:
+        '200':
+          description: successful
 servers:
 - url: https://{defaultHost}
   variables:

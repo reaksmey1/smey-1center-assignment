@@ -6,5 +6,9 @@ class Api::PrimeNumbersController < ApplicationController
             render json: {error: 'Invalid Input: Max number should be positive.'}, status: :unprocessable_entity
             return
         end
+
+        primes = prime_number.generate
+
+        render json: { total: prime_number.total(primes) }
     end
 end
