@@ -6,7 +6,9 @@ Run `docker-compose build`
 
 Run `docker-compose up -d`
 
-Open the browser and visit `http://localhost:3000/api/prime_numbers/calculate?max_number=100`
+Open the browser and visit http://localhost:3000/api/prime_numbers/calculate?max_number=100
+
+To view API Doc visit http://localhost:8080/api-docs/index.html
 
 ### Load image into Minikube manually
 
@@ -20,7 +22,9 @@ Run `kubectl get pod`
 
 Run `kubectl port-forward your_container_name 8080:3000`
 
-Open the browser and visit `http://localhost:8080/api/prime_numbers/calculate?max_number=100`
+Open the browser and visit http://localhost:8080/api/prime_numbers/calculate?max_number=100
+
+To view API Doc visit http://localhost:8080/api-docs/index.html
 
 ### Load image into Minikube using deployment.yaml
 
@@ -54,4 +58,6 @@ Run `rake db:migrate`
 Run `rails s`
 
 Open the browser and visit http://localhost:3000/api/prime_numbers/calculate?max_number=100
+
+To view API Doc visit http://localhost:8080/api-docs/index.html
 
