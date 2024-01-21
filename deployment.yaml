@@ -19,16 +19,4 @@ spec:
           ports:
             - containerPort: 3000
               protocol: TCP
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: smey-rails-app-service
-spec:
-  selector:
-    app: smey-rails-3-image
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3000
-  type: NodePort
+
