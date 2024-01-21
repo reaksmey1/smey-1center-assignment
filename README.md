@@ -8,7 +8,7 @@ Run `docker-compose up -d`
 
 Open the browser and visit `http://localhost:3000/api/prime_numbers/calculate?max_number=100`
 
-### Load image into Minikube
+### Load image into Minikube manually
 
 Run `eval $(minikube -p minikube docker-env)`
 
@@ -16,7 +16,25 @@ Run `docker build -t your_image_name -f ./Dockerfile .`
 
 Run `kubectl run your_container_name --image=your_image_name --image-pull-policy=Never --restart=Never`
 
+Run `kubectl get pod`
+
 Run `kubectl port-forward your_container_name 8080:3000`
+
+Open the browser and visit `http://localhost:8080/api/prime_numbers/calculate?max_number=100`
+
+### Load image into Minikube using deployment.yaml
+
+Run `eval $(minikube -p minikube docker-env)`
+
+Run `docker build -t smey-rails-3-image -f ./Dockerfile .`
+
+Run `minikube image load smey-rails-3-image`
+
+Run `kubectl create -f ./deployment.yaml`
+
+Run `kubectl get pod`
+
+Run `kubectl port-forward your_pod_name 8080:3000`
 
 Open the browser and visit `http://localhost:8080/api/prime_numbers/calculate?max_number=100`
 
