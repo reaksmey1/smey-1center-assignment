@@ -6,17 +6,30 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: smey-rails-3-image
+      app: smey-rails-3
   template:
     metadata:
       labels:
-        app: smey-rails-3-image
+        app: smey-rails-3
     spec:
       containers:
-        - name: smey-rails-3-image
+        - name: smey-rails-3
           image: smey-rails-3-image
           imagePullPolicy: Never
           ports:
             - containerPort: 3000
               protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: smey-rails-3-service
+spec:
+  selector:
+    app: smey-rails-3
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
 
