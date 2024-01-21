@@ -36,13 +36,11 @@ Run `minikube image load smey-rails-3-image`
 
 Run `kubectl create -f ./deployment.yaml`
 
-Run `kubectl get pod`
+Open new tab and Run `minikube tunnel`
 
-Run `kubectl port-forward your_pod_name 8080:3000`
+Run `kubectl get service` and Copy service_name
 
-Open the browser and visit http://localhost:3000/api/prime_numbers/calculate?max_number=100
-
-To view API Doc visit http://localhost:8080/api-docs/index.html
+Run `minikube service your_service_name` that will open your browser
 
 ### Local Development setup (Without Docker)
 
